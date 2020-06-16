@@ -7,6 +7,9 @@ interface HelloResponse {
 }
 
 export function helloService(req: HelloRequest): HelloResponse {
+    if (!req.name) {
+        throw "missing name"
+    }
     return {
         message: `Hello ${req.name}`
     }
