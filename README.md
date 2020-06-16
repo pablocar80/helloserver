@@ -8,3 +8,4 @@ Features:
 - added debug settings for VSCode
 - using Jest for automated testing
 - loading environment settings from .env file when available
+- using ts-node-dev for debugging directly in Typescript
