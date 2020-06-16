@@ -10,10 +10,6 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.get('/', (_req, res) => {
-  res.send('Use Advanced Rest Client extension in Chrome to test')
-})
-
 registerService(app, '/hello', helloService)
 
 app.listen(port, err => {

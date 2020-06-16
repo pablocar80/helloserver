@@ -9,3 +9,6 @@ export function registerService<TReq, TRes>(app: Express,
         res.send(result)
     })
 }
+
+export class ValidationError extends Error {    
+}
