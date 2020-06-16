@@ -4,7 +4,7 @@ Sample boilerplate Typescript NodeJS server
 Features:
 - using Express for routing requests
 - organized to have 1 service per file with corresponding Request and Response classes
-- developed `registerService` method to declare service
+- developed `registerService` method to declare service with one line
 - services developed are decoupled from Express framework
 - added debug settings for VSCode
 - using Jest for automated testing
