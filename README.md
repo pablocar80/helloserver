@@ -11,6 +11,8 @@ Features:
 - loading environment settings from .env file when available
 - using ts-node-dev for debugging directly in Typescript
 
-Additional notes:
-- Pending: execute in docker
+Pending changes:
+- Execute in docker
+
+Additional notes
 - There is a Chrome extension 'Advanced REST client' that can be used to test services
