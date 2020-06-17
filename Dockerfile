@@ -6,5 +6,3 @@ WORKDIR /app
 RUN npm install
 EXPOSE 3000
 ENTRYPOINT [ "node", "dist/src/app.js" ]
-
-#pending: run with node user
