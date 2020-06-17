@@ -10,10 +10,10 @@ describe('say hello', function() {
     })
     it('error', function() {
         const t = () => {
-            let result = helloService({
+            helloService({
                 name: ''
             })
-            expect(t).toThrow(ValidationError)
         }
+        expect(t).toThrow(ValidationError)
     })
 })

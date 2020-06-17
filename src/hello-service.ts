@@ -1,3 +1,5 @@
+import { ValidationError } from "./common"
+
 interface HelloRequest {
     name: string
 }
@@ -8,7 +10,7 @@ interface HelloResponse {
 
 export function helloService(req: HelloRequest): HelloResponse {
     if (!req.name) {
-        throw new Error("missing name")
+        throw new ValidationError("missing name")
     }
     return {
         message: `Hello ${req.name}`
