@@ -7,7 +7,14 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "start": "tsc && node dist/app.js",
-    "dev": "ts-node-dev --respawn --transpileOnly ./src/app.ts"
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/app.ts",
+    "docker-image-build": "docker image build --tag testserver:latest .",
+    "docker-image-remove": "docker rmi testserver:latest || true",
+    "docker-container-start": "docker container run -d --name mycontainer --publish 3000:3000 testserver:latest",
+    "docker-container-remove": "docker stop mycontainer || true && docker rm mycontainer || true",
+    "docker-clean": "npm-run-all docker-container-remove docker-image-remove",
+    "docker-start": "npm-run-all docker-clean docker-image-build docker-container-start",
+    "docker-stop": "docker stop mycontainer"
   },
   "repository": {
     "type": "git",
@@ -24,6 +31,7 @@
     "@types/jest": "^26.0.0",
     "@types/node": "^14.0.13",
     "jest": "^26.0.1",
+    "npm-run-all": "^4.1.5",
     "ts-jest": "^26.1.0",
     "tslint": "^6.1.2",
     "typescript": "^3.9.5"

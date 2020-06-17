@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv'
 import express from 'express'
 import bodyParser from 'body-parser';
-import { registerService } from './common'
+import { registerPost } from './common'
 import { helloService } from './hello-service';
 
 dotenv.config()
@@ -10,7 +10,7 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-registerService(app, '/hello', helloService)
+registerPost(app, '/hello', helloService)
 
 app.listen(port, err => {
   if (err) {
