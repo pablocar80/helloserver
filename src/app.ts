@@ -1,20 +1,19 @@
-import * as dotenv from 'dotenv'
 import express from 'express'
 import bodyParser from 'body-parser';
 import { registerPost } from './common'
 import { helloService } from './hello-service';
+import { loadSettings } from './settings';
 
-dotenv.config()
-const port = +process.env.PORT || 3000
+const setup = loadSettings()
 const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 registerPost(app, '/hello', helloService)
 
-app.listen(port, err => {
+app.listen(setup.port, err => {
   if (err) {
     return console.error(err)
   }
-  return console.log(`server is listening on ${port}`)
+  return console.log(`server is listening on ${setup.port}`)
 })
