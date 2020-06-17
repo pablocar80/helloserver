@@ -10,9 +10,7 @@ Features:
 - using Jest for automated testing
 - loading environment settings from .env file when available
 - using ts-node-dev for debugging directly in Typescript
-
-Pending changes:
-- Execute in docker
+- scripts for creating docker image, starting container, and stopping container
 
 Additional notes
 - There is a Chrome extension 'Advanced REST client' that can be used to test services
