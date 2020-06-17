@@ -1,5 +1,4 @@
 FROM alpine
-LABEL maintainer="pablocar80@gmail.com"
 RUN apk add --update nodejs nodejs-npm
 COPY . /app
 WORKDIR /app
